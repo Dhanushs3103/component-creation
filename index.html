@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JSX and Babel</title>
+  <style>
+    body {
+        margin: 0;
+        padding: 0;
+        text-align: center;
+    }
+    #navbar {
+      display: flex;
+      justify-content: space-around;
+      padding: 20px;
+      background-color: aliceblue;
+
+    }
+
+    .nav-items {
+      display: flex;
+      gap: 50px;
+      font-size: 20px;
+      font-weight: 600;
+    }
+
+    #content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 50px;
+        background-color: whitesmoke;
+        height: 70vh;
+    }
+
+    #footer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 20px;
+        background-color:azure;
+    }
+
+  </style>
+</head>
+<body>
+  <div id="root"></div>
+  <script src="https://unpkg.com/react@18.2.0/umd/react.production.min.js"></script>
+  <script src="https://unpkg.com/react-dom@18.2.0/umd/react-dom.production.min.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script type="text/babel">
+    function Navbar () {
+        return (
+            <div id="navbar">
+                <img src="https://students.masaischool.com/static/media/masai-logo.e5c8801d4f26d2da036ec9e4b93cb202.svg" alt="logo"/>
+                <div className="nav-items">
+                    <p>Home</p>
+                    <p>About</p>
+                    <p>Skills</p>
+                    <p>Projects</p>
+                </div>
+            </div>
+        );
+    }
+
+    function Content () {
+        return (
+          <div id="content">
+              <h1>Hi I am content</h1>
+          </div>  
+        );
+    }
+
+    function Footer () {
+        return (
+            <div id="footer">
+                <p>copyright &#169; masaischool All Rights Reserved</p>
+            </div>
+        )
+    }
+
+    function App () {
+        return (
+            <>
+            <Navbar/>
+            <Content/>
+            <Footer/>
+            </>
+        );
+    }
+
+    ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+  </script>
+</body>
+</html>
